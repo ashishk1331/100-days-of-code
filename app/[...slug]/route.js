@@ -11,15 +11,18 @@ export const size = {
 };
 export const contentType = "image/svg";
 
+const factor = 2;
+
 export async function GET(req, { params }) {
     let [index] = params.slug;
 
     const dir = path.join(process.cwd());
     const fontBuffer = await fs.readFile(dir + "/app/[...slug]/font.ttf");
 
+
     const svg = await satori(getLayout(index), {
-        width: 800,
-        height: 400,
+        width: 800 * factor,
+        height: 400 * factor,
         fonts: [
             {
                 name: "spaceMono",
@@ -54,7 +57,7 @@ function getLayout(index) {
                 alignItems: "center",
                 justifyContent: "center",
                 color: "#191825",
-                fontSize: 32,
+                fontSize: 32 * factor,
                 fontWeight: 900,
                 backgroundImage:
                     "radial-gradient(#191825 6px, transparent 2px), radial-gradient(#191825 6px, #e5e5f7 2px)",
@@ -65,8 +68,8 @@ function getLayout(index) {
                 {
                     type: "svg",
                     props: {
-                        width: 128,
-                        height: 128,
+                        width: 128 * factor * 1.4,
+                        height: 128 * factor * 1.4,
                         viewBox: "0 0 128 128",
                         fill: "none",
                         style: {
@@ -110,7 +113,10 @@ function getLayout(index) {
                 {
                     type: "div",
                     props: {
-                        tw: "text-base p-1 px-6 rounded-full bg-[#865DFF] text-white",
+                        tw: "p-3 px-12 rounded-full bg-[#865DFF] text-white",
+                        style: {
+                            fontSize: "0.5em",
+                        },
                         children: "#100-Days-of-Code",
                     },
                 },

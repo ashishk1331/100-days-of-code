@@ -47,7 +47,7 @@ const ImageHolder = forwardRef(function ImageHolder({ day }, ref) {
         <img
             src={`/${day}`}
             alt={"IMage for Day " + day}
-            className="m-auto rounded-md"
+            className="m-auto rounded-md w-3/4"
             ref={ref}
         />
     );
