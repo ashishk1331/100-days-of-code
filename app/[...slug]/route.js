@@ -53,14 +53,13 @@ function getLayout(index) {
                 flexDirection: "column",
                 alignItems: "center",
                 justifyContent: "center",
-                backgroundColor: "#fff",
                 color: "#191825",
                 fontSize: 32,
                 fontWeight: 900,
-                backgroundPosition: "0 10px,10px 10px",
                 backgroundImage:
-                    "linear-gradient(#865DFF75 2.6px, transparent 2.6px), linear-gradient(to right, #865DFF75 2.6px, white 2.6px)",
-                backgroundSize: "52px 52px",
+                    "radial-gradient(#191825 6px, transparent 2px), radial-gradient(#191825 6px, #e5e5f7 2px)",
+                backgroundSize: "36px 36px",
+                backgroundPosition: "0 0,18px 18px",
             },
             children: [
                 {
@@ -105,15 +104,16 @@ function getLayout(index) {
                             marginBottom: 24,
                             fontSize: "1.2em",
                         },
-                        children: "#Day " + index,
+                        children: "Day " + index,
                     },
                 },
-                // {
-                //     type: "div",
-                //     props: {
-                //         children: title || "System of Equations",
-                //     },
-                // },
+                {
+                    type: "div",
+                    props: {
+                        tw: "text-base p-1 px-6 rounded-full bg-[#865DFF] text-white",
+                        children: "#100-Days-of-Code",
+                    },
+                },
             ],
         },
     };
