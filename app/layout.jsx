@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
+import { twMerge } from "tailwind-merge";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -10,8 +11,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className + " bg-gray-200"}>{children}</body>
+    <html lang="en" className="scroll-smooth">
+      <body className={twMerge("", inter.className)}>{children}</body>
     </html>
   );
 }
