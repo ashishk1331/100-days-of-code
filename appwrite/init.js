@@ -33,3 +33,23 @@ export async function addBetaUser(props) {
 
 	return null;
 }
+
+export async function getHeadCount(){
+	try {
+		const response = await databases.listDocuments(
+			process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID,
+			process.env.NEXT_PUBLIC_APPWRITE_COLLECTION_ID,
+		);
+
+		if(response.documents) {
+			return response.total;
+		} else {
+			return 0;
+		}
+	} catch(error) {
+		console.error(error);
+		return error;
+	}
+
+	return 0;
+}

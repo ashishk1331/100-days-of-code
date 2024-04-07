@@ -20,11 +20,9 @@ export default function (props) {
 		<header className="fixed inset-0 h-fit bg-white/40 backdrop-blur border border-gray-200 rounded-lg m-4 z-50">
 			<div className="w-full mx-auto max-w-screen-xl p-4 flex items-center justify-between text-gray-900">
 				<span className="text-sm sm:text-center dark:text-gray-400">
-					© 2024{" "}
 					<a href="#first" className="hover:underline">
 						Proxy Club™
 					</a>
-					. All Rights Reserved.
 				</span>
 
 				<div className="hidden md:block">

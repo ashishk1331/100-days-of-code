@@ -1,75 +1,96 @@
-export default function (props) {
+import Tree from "/public/tree_proto.jpg";
+import Folder from "/public/folder_structure.png";
+import Image from "next/image";
+
+export default function Example() {
 	return (
 		<>
-			{/* FAQ */}
-			<div className="max-w-[85rem] min-h-screen px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto flex">
-				{/* Grid */}
-				<div className="grid md:grid-cols-5 gap-10 md:gap-16 m-auto">
-					<div className="md:col-span-2">
-						<div className="max-w-xl">
-							<h2 className="text-2xl  md:text-4xl md:leading-tight">
-								Timeline of <mark>upcoming events</mark>
+			{/* Blog Article */}
+			<div className="max-w-3xl px-4 pt-6 lg:pt-10 pb-12 sm:px-6 lg:px-8 mx-auto mt-24">
+				<div className="max-w-2xl">
+					{/* Content */}
+					<div className="space-y-5 md:space-y-8">
+						<div className="space-y-3">
+							<h2 className="text-2xl font-bold md:text-3xl">
+								The Roadmap
 							</h2>
-							<p className="mt-1 hidden md:block text-gray-600">
-								This is an approximation of the timeline for all
-								the changes that will be done to the proxy club
-								and whta all proxy club has to offer.
+							<p className="text-lg text-gray-800">
+								Have a seat, grab a coffee, and let's talk about
+								this awfully exciting journey we'll be on. Yes,
+								a journey that will last for 100 days and we'll
+								be travelling through the valleys of JSX, the
+								yards of AVL trees, and seasides where
+								Nanami-San wanted to be.(JJK reference, anyone?)
 							</p>
 						</div>
+						<p className="text-lg text-gray-800">
+							What's the plan?
+						</p>
+						<p className="text-lg text-gray-800">
+							Around a year ago, I came across a tweet from{" "}
+							<a
+								href="https://twitter.com/mattpocockuk"
+								className="text-emerald-600 underline"
+							>
+								Matt
+							</a>
+							, the urban TS legend, where he wrote about an
+							exercise of building a christmas tree using
+							recursion in React. Well, he did that in Vue.
+							However, I thought why not merge these two genres
+							together and bring forth a symphony that can really
+							help others visualize the concepts and{" "}
+							<mark className="bg-emerald-200">for real</mark>{" "}
+							gain the wisdom.
+						</p>
+						<figure>
+							<Image
+								className="w-full object-cover rounded-xl"
+								src={Tree}
+								alt="Christmas Tree problem"
+							/>
+							<figcaption className="mt-3 text-sm text-center text-gray-500">
+								The Christmas Tree generated using recursive
+								functions in react.
+							</figcaption>
+						</figure>
+						<p className="text-lg text-gray-800">
+							Still not convinced? Well, let me show you another
+							example. This time, we'll be creating a folder
+							structure using the recursion. There are a plethora
+							of such visual structures that you see everyday and
+							we'll be creating them all. Yay!
+						</p>
+						<p className="text-lg text-gray-800">
+							Why not you try it and ping me back,{" "}
+							<a
+								href="https://twitter.com/AshishK1331"
+								className="text-emerald-600 underline"
+							>
+								ashishk
+							</a>{" "}
+							I would love to see how you create it.
+						</p>
+						<figure>
+							<Image
+								className="w-full object-cover rounded-xl"
+								src={Folder}
+								alt="Christmas Tree problem"
+							/>
+							<figcaption className="mt-3 text-sm text-center text-gray-500">
+								The Christmas Tree generated using recursive
+								functions in react.
+							</figcaption>
+						</figure>
+						<p className="text-lg text-gray-800">
+							Now, if you feel interested and want to learn more
+							about the concepts, then let's dive in and get you
+							signed up. BTW form is attached just below somewhere
+							near, check it out!
+						</p>
 					</div>
-					{/* End Col */}
-					<div className="md:col-span-3">
-						{/* Accordion */}
-						<ol className="relative border-s text-gray-600">
-							<Timestop
-								time="March 2024"
-								title="Soft Launch of Proxy Club"
-								description={
-									<span>
-										The proxy club will get the head start
-										with the revamped{" "}
-										<mark>#100daysofcodechallenge</mark>.
-									</span>
-								}
-							/>
-							<Timestop
-								time="February 2024"
-								title="Beta Launch of Proxy Club"
-								description="The beta launch will be open to the first 100 users who sign up for the waiting list."
-							/>
-							<Timestop
-								time="April 2022"
-								title="E-Commerce UI code in Tailwind CSS"
-								description="Get started with dozens of web components and interactive elements built on top of Tailwind CSS."
-							/>
-						</ol>
-						{/* End Accordion */}
-					</div>
-					{/* End Col */}
 				</div>
-				{/* End Grid */}
 			</div>
-			{/* End FAQ */}
 		</>
-	);
-}
-
-function Timestop(props) {
-	const { time, title, description } = props;
-	return (
-		<li className="mb-10 ms-4">
-			<div className="absolute w-3 h-3 bg-gray-300 rounded-full mt-1.5 -start-1.5 border border-white" />
-			<time className="mb-1 text-sm font-normal leading-none text-gray-600">
-				{time}
-			</time>
-			<h3 className="text-lg font-semibold text-gray-900 ">{title}</h3>
-			{description ? (
-				<p className="mb-4 text-base font-normal text-gray-600">
-					{description}
-				</p>
-			) : (
-				<>{props.children}</>
-			)}
-		</li>
 	);
 }
